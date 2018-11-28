@@ -2,36 +2,33 @@ package lesson1;
 
 public class MirrorMatrix {
 
-    public static String [][] createMatrix(int width, int heigth){
-        String [][] matrix = new String [width][heigth];
+    public static int [][] createMatrix(int width, int heigth){
+        int [][] matrix = new int [width][heigth];
         for (int i = 0; i < width ; i++) {
             for (int j = 0; j < heigth; j++) {
-                matrix[i][j] = "*";
-            }
-        }
-        for (int i = 0; i < width ; i++) {
-            for (int j = i; j < heigth; j++) {
-                matrix[i][j] = "0";
+                int randomNumber = (int)(Math.random()*100);
+                matrix[i][j] = randomNumber;
             }
         }
         return matrix;
     }
 
-    public static String[][] mirrorMatrix(String[][] matrix) {
+    public static int [][] mirrorMatrix(int [][] matrix) {
         for (int i = 0; i < matrix.length ; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
-                matrix[i][j] = "0";
-            }
-        }
-        for (int i = 0; i < matrix.length ; i++) {
-            for (int j = i; j < matrix[i].length; j++) {
-                matrix[i][j] = "*";
+                for (int k = matrix.length-1; k <= 0; k--) {
+                    for (int l = matrix[k].length-1; l <= k; l--) {
+                        int temp = matrix[i][j];
+                        matrix[i][j] = matrix[k][l];
+                        matrix[k][l] = temp;
+                    }
+                }
             }
         }
         return matrix;
     }
 
-        public static void printMatrix(String[][] matrix){
+        public static void printMatrix(int [][] matrix){
             System.out.println();
             for (int i = 0; i < matrix.length; i++) {
                 for (int j = 0; j < matrix[i].length; j++) {
@@ -42,7 +39,7 @@ public class MirrorMatrix {
         }
 
     public static void main(String[] args) {
-       String [][] matrix = createMatrix(5,5);
+       int [][] matrix = createMatrix(5,5);
         printMatrix(matrix);
        printMatrix(mirrorMatrix(matrix));
     }

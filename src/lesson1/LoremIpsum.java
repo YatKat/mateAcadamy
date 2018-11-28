@@ -8,7 +8,7 @@ public class LoremIpsum {
         try {
             BufferedReader reader = new BufferedReader(new FileReader("input.txt"));
             BufferedWriter writer = new BufferedWriter(new FileWriter(filteredFile));
-            while(reader.ready()){
+            while(reader.ready()) {
                 String line = reader.readLine();
                 String[]words  = line.split("\\s");
                 //print(words); // get off comments to check words in an array;
@@ -22,12 +22,12 @@ public class LoremIpsum {
             writer.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-        }catch (IOException e){
+        }catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    public static void print(String[] mas){
+    public static void print(String[] mas) {
         for (int i = 0; i < mas.length ; i++) {
             System.out.println(mas[i]+" ");
         }

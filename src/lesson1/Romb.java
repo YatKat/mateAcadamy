@@ -6,23 +6,25 @@ import java.io.InputStreamReader;
 
 public class Romb {
 
-    public static String[][] createRomb(int size) {
-        String[][] matrix = new String[size][size];
-        int center = size/2;
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
+    public static void createRomb(int size) {
+        if (size <= 0) return;
+        int center = size / 2;
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
                 if (i <= center) {
                     if (j >= center - i && j <= center + i) {
-                        matrix[i][j] = "*";
-                    }else matrix[i][j] = " ";
+                        System.out.print("*");
+                    } else System.out.print(" ");
                 } else {
                     if (j >= center + i - size + 1 && j <= center - i + size - 1) {
-                        matrix[i][j] = "*";
-                    }else matrix[i][j] = " ";
+                        System.out.print("*");
+                    } else System.out.print(" ");
                 }
             }
+            System.out.println();
         }
-        return matrix;
+        size--;
+        //createRomb(size);
     }
 
     public static void main(String[] args) {
@@ -30,7 +32,7 @@ public class Romb {
         System.out.println("Put the size of romb");
         try {
             int sizeOfRomb = Integer.valueOf(bf.readLine());
-            MirrorMatrix.printMatrix(createRomb(sizeOfRomb));
+            createRomb(sizeOfRomb);
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
