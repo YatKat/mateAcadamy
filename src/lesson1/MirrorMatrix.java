@@ -15,16 +15,12 @@ public class MirrorMatrix {
 
     public static int [][] mirrorMatrix(int [][] matrix) {
         for (int i = 0; i < matrix.length ; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                for (int k = matrix.length-1; k <= 0; k--) {
-                    for (int l = matrix[k].length-1; l <= k; l--) {
+            for (int j = 0; j <= i; j++) {
                         int temp = matrix[i][j];
-                        matrix[i][j] = matrix[k][l];
-                        matrix[k][l] = temp;
+                        matrix[i][j] = matrix[j][i];
+                        matrix[j][i] = temp;
                     }
                 }
-            }
-        }
         return matrix;
     }
 
