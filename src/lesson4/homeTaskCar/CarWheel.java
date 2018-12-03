@@ -4,7 +4,7 @@ public class CarWheel {
     private double wheelState;
 
     public CarWheel() {
-        this.wheelState = Math.random();
+        this.wheelState = 1;
     }
 
     public CarWheel(double wheelState) {
@@ -19,15 +19,15 @@ public class CarWheel {
         this.wheelState = wheelState;
     }
 
-    public void changeWheel(){
+    public void changeWheel() {
         wheelState = 1;
     }
 
-    public void eraseWheel(int percent){
-        wheelState = wheelState - (percent*100/wheelState);
+    public void eraseWheel(int percent) {
+        wheelState = wheelState - (percent * 100 / wheelState);
     }
 
-    public void printSate(){
+    public void printSate() {
         System.out.println(wheelState);
     }
 }

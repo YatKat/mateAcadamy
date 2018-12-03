@@ -3,21 +3,15 @@ package lesson4.homeTaskCar;
 public class CarDoor {
     private boolean isDoorClosed;
     private boolean isWindowClosed;
-    private boolean isDoorOpened;
-    private boolean isWindowOpened;
 
     public CarDoor() {
         this.isDoorClosed = true;
         this.isWindowClosed = true;
-        this.isDoorOpened = false;
-        this.isWindowOpened = false;
     }
 
     public CarDoor(boolean isDoorClosed, boolean isWindowClosed, boolean isDoorOpened, boolean isWindowOpened) {
         this.isDoorClosed = isDoorClosed;
         this.isWindowClosed = isWindowClosed;
-        this.isDoorOpened = isDoorOpened;
-        this.isWindowOpened = isWindowOpened;
     }
 
     public boolean isDoorClosed() {
@@ -36,50 +30,31 @@ public class CarDoor {
         isWindowClosed = windowClosed;
     }
 
-    public boolean isDoorOpened() {
-        return isDoorOpened;
+    public boolean openDoor() {
+        return isDoorClosed = false;
     }
 
-    public void setDoorOpened(boolean doorOpened) {
-        isDoorOpened = doorOpened;
-    }
-
-    public boolean isWindowOpened() {
-        return isWindowOpened;
-    }
-
-    public void setWindowOpened(boolean windowOpened) {
-        isWindowOpened = windowOpened;
-    }
-
-    public boolean openDoor(){
-      return isDoorOpened = true;
-    }
-
-    public boolean closeDoor(){
+    public boolean closeDoor() {
         return isDoorClosed = true;
     }
 
-    public void openCloseDoor(){
-        if(isDoorClosed) isDoorOpened = true;
-        else isDoorClosed = true;
+    public boolean openCloseDoor() {
+        return isDoorClosed = !isDoorClosed;
     }
 
-    public boolean openWindow(){
-        return isWindowOpened = true;
+    public boolean openWindow() {
+        return isWindowClosed = false;
     }
 
-    public boolean closeWindow(){
+    public boolean closeWindow() {
         return isWindowClosed = true;
     }
 
-    public void openCloseWindow(){
-        if(isWindowClosed) isWindowClosed = true;
-        else isWindowClosed = true;
+    public boolean openCloseWindow() {
+        return isWindowClosed = !isWindowClosed;
     }
 
-    public void printData(){
-        System.out.println(isDoorClosed +", " + isDoorOpened +", " + isWindowClosed +", " + isWindowOpened);
+    public void printData() {
+        System.out.println(isDoorClosed + ", " + isWindowClosed);
     }
-
 }
