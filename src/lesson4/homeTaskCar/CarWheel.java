@@ -2,9 +2,10 @@ package lesson4.homeTaskCar;
 
 public class CarWheel {
     private double wheelState;
+    private static final double WHEEL_MAX_STATE = 1;
 
     public CarWheel() {
-        this.wheelState = 1;
+        this.wheelState = WHEEL_MAX_STATE;
     }
 
     public CarWheel(double wheelState) {

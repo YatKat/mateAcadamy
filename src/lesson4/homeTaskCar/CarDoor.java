@@ -9,7 +9,7 @@ public class CarDoor {
         this.isWindowClosed = true;
     }
 
-    public CarDoor(boolean isDoorClosed, boolean isWindowClosed, boolean isDoorOpened, boolean isWindowOpened) {
+    public CarDoor(boolean isDoorClosed, boolean isWindowClosed) {
         this.isDoorClosed = isDoorClosed;
         this.isWindowClosed = isWindowClosed;
     }

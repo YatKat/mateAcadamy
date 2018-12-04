@@ -97,12 +97,14 @@ public class Car {
     }
 
     public void changeCurrentSpeed(int addSpeed) {
-        if (currentSpeed + addSpeed > getMaxCurrentSpeed()) System.out.println("Reached max speed!");
+        if (currentSpeed + addSpeed > getMaxCurrentSpeed())
+            System.out.println("Reached max speed!");
         else currentSpeed = currentSpeed + addSpeed;
     }
 
     public void takeOnePassenger() {
-        if (quantityOfPassengers + 1 > passengersCapacity) System.out.println("Can't take any more passengers");
+        if (quantityOfPassengers + 1 > passengersCapacity)
+            System.out.println("Can't take any more passengers");
         else quantityOfPassengers++;
     }
 
