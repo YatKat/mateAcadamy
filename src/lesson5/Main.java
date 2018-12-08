@@ -1,8 +1,5 @@
 package lesson5;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
         MyArrayList<String> list = new MyArrayList<>();
@@ -17,7 +14,9 @@ public class Main {
         System.out.println("Size " + list.size());
         list.add("Zhyrik", 1);
         System.out.println(list.toString());
+        list.add("Bobik", 0);
+        list.add("dudik", 3);
+        //list.add("Robik", 12);// throw exception
+        System.out.println(list.toString());
     }
-
-
 }

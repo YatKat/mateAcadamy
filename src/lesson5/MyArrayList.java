@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class MyArrayList<T> implements List{
+public class MyArrayList<T> implements List {
     private int size;
     private Object[] data;
 
