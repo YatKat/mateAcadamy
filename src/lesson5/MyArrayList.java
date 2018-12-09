@@ -21,7 +21,7 @@ public class MyArrayList<T> implements List<T> {
 
     public boolean add(Object value) {
         ensureCapacity(size + 1);
-        this.data[size] =  (T) value;
+        this.data[size] = (T) value;
         size++;
         return true;
     }
@@ -46,24 +46,24 @@ public class MyArrayList<T> implements List<T> {
     }
 
     @Override
-        public void add(int index, T element) {
-            checkIndex(index);
-            ensureCapacity(size + 1);
-            if (data[index] == null) {
-                this.data[index] = element;
-            } else {
-                Object tmp;
-                Object temp2;
-                tmp = data[index];
-                data[index] = element;
-                for (int i = index + 1; i < data.length - 1; i++) {
-                    temp2 = data[i];
-                    data[i] = tmp;
-                    tmp = temp2;
-                }
+    public void add(int index, T element) {
+        checkIndex(index);
+        ensureCapacity(size + 1);
+        if (data[index] == null) {
+            this.data[index] = element;
+        } else {
+            Object tmp;
+            Object temp2;
+            tmp = data[index];
+            data[index] = element;
+            for (int i = index + 1; i < data.length - 1; i++) {
+                temp2 = data[i];
+                data[i] = tmp;
+                tmp = temp2;
             }
-            size++;
         }
+        size++;
+    }
 
     public T remove(int index) {
         checkIndex(index);
@@ -71,8 +71,8 @@ public class MyArrayList<T> implements List<T> {
         for (int i = index + 1; i < size; i++) {
             tempData[i] = this.data[i];
         }
-        T temporary = (T)data[index];
-        for (int i = index; i < size-1; i++) {
+        T temporary = (T) data[index];
+        for (int i = index; i < size - 1; i++) {
             this.data[i] = tempData[i + 1];
         }
         size--;
@@ -178,16 +178,17 @@ public class MyArrayList<T> implements List<T> {
         data = newData;
     }
 
-    public void checkIndex(int index) {
+    private void checkIndex(int index) {
         if (index >= size || index < 0) {
             throw new IndexOutOfBoundsException(" There is no such index in an ArrayList");
         }
     }
 
-    public String toString (){
+    public String toString() {
         String str = "";
-        for (int i = 0; i < size ; i++) {
+        for (int i = 0; i < size; i++) {
             str += data[i] + ", ";
-        }return str;
+        }
+        return str;
     }
 }

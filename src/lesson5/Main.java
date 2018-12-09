@@ -12,10 +12,10 @@ public class Main {
         System.out.println("Contains Lis " + list.contains("Lis"));
         System.out.println("The element " + list.remove(2) + " removed");
         System.out.println("Size " + list.size());
-        list.add("Zhyrik", 1);
+        list.add(1, "Zhyrik");
         System.out.println(list.toString());
-        list.add("Bobik", 0);
-        list.add("dudik", 3);
+        list.add(0, "Bobik");
+        list.add(3, "Dudik");
         //list.add("Robik", 12);// throw exception
         System.out.println(list.toString());
     }
