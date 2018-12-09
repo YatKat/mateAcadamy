@@ -2,7 +2,7 @@ package lesson7;
 
 public class MainForJoin {
     public static void main(String[] args) {
-        Thread myThread = new CustomThread ("myThread", 3000);
+        Thread myThread = new CustomThread("myThread", 3000);
         Thread otherThread = new CustomThread("OtherThread", 5000);
         myThread.start();
         try {
@@ -17,8 +17,8 @@ public class MainForJoin {
     }
 }
 
-//Output
-// myThreadstarted
+//Output:
+//myThreadstarted
 //myThreadfinished
 //myThread join exit
 //main method finished

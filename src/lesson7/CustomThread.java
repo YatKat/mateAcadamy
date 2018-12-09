@@ -1,8 +1,8 @@
 package lesson7;
 
 public class CustomThread extends Thread {
-    long sleepMillisecond;
-    String name;
+    private long sleepMillisecond;
+    private String name;
 
     public CustomThread(String name, long sleepMillisecond) {
         super(name);
