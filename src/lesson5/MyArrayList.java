@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class MyArrayList<T> implements List {
+public class MyArrayList<T> implements List<T> {
     private int size;
     private Object[] data;
 
@@ -24,25 +24,6 @@ public class MyArrayList<T> implements List {
         this.data[size] =  (T) value;
         size++;
         return true;
-    }
-
-    public void add(T value, int index) {
-        checkIndex(index);
-        ensureCapacity(size + 1);
-        if (data[index] == null) {
-            this.data[index] = value;
-        } else {
-            Object tmp;
-            Object temp2;
-            tmp = data[index];
-            data[index] = value;
-            for (int i = index + 1; i < data.length - 1; i++) {
-                temp2 = data[i];
-                data[i] = tmp;
-                tmp = temp2;
-            }
-        }
-        size++;
     }
 
     public int size() {
@@ -65,9 +46,24 @@ public class MyArrayList<T> implements List {
     }
 
     @Override
-    public void add(int index, Object element) {
-
-    }
+        public void add(int index, T element) {
+            checkIndex(index);
+            ensureCapacity(size + 1);
+            if (data[index] == null) {
+                this.data[index] = element;
+            } else {
+                Object tmp;
+                Object temp2;
+                tmp = data[index];
+                data[index] = element;
+                for (int i = index + 1; i < data.length - 1; i++) {
+                    temp2 = data[i];
+                    data[i] = tmp;
+                    tmp = temp2;
+                }
+            }
+            size++;
+        }
 
     public T remove(int index) {
         checkIndex(index);
